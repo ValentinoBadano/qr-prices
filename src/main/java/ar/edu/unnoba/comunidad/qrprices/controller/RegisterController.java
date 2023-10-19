@@ -24,7 +24,8 @@ public class RegisterController {
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user) {
         // Validar y guardar el usuario en la base de datos
-        userService.createUserWithRole(user, user.getRole());
+        userService.createUserWithRole(user);
+        System.out.println("Usuario creado con nombre: " + user.getUsername());
         return "redirect:/login"; // Redirige al usuario a la página de inicio de sesión después del registro
     }
 }

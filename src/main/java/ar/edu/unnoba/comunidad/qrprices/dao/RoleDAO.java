@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public class RoleDAO {
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
     public RoleDAO(RoleRepository roleRepository) {
@@ -16,7 +16,7 @@ public class RoleDAO {
     }
 
     public Role findRoleByName(String name) {
-        return roleRepository.findByName(name);
+        return roleRepository.findRoleByName(name);
     }
 
     public List<Role> getAllRoles() {
